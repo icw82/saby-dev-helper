@@ -1,0 +1,7 @@
+._*
+/build/
+/node_modules/
+package-lock.json
+local-settings.yaml
+
+.vscode

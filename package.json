@@ -1,0 +1,33 @@
+{
+    "name": "saby-dev-helper",
+    "version": "1.0.4",
+    "description": "Делает жизнь разработчика в сами-знаете-какой-конторе проще и интереснее",
+    "author": "icw82",
+    "license": "MIT",
+    "main": "gulpfile.js",
+    "scripts": {
+        "start": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:icw82/saby-dev-helper.git"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "@types/node": "^12.6.2",
+        "@types/requirejs": "^2.1.31",
+        "chalk": "^2.4.2",
+        "dts-gen": "^0.5.8",
+        "esm": "^3.2.25",
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-insert": "^0.5.0",
+        "gulp-jsdoc3": "^2.0.0",
+        "gulp-less": "^4.0.1",
+        "gulp-typescript": "^5.0.1",
+        "js-yaml": "^3.13.1",
+        "saby-typescript": "github:saby/TypeScript#rc-19.500",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.2"
+    }
+}
