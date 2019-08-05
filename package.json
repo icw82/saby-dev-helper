@@ -14,8 +14,6 @@
     },
     "devDependencies": {},
     "dependencies": {
-        "@types/node": "^12.6.2",
-        "@types/requirejs": "^2.1.31",
         "chalk": "^2.4.2",
         "dts-gen": "^0.5.8",
         "esm": "^3.2.25",
