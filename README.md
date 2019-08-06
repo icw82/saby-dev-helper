@@ -20,7 +20,17 @@
     ```
 
     где `/path/to/project.s3cld` — путь до s3cld-файла проекта,
-    а `targets` — массив рабочих каталогов `client`.
+    а `targets` — массив рабочих каталогов «client», содержащие     модули фронтенда.
+
+    Например:
+
+    ```yaml
+    s3cld: 'C:\online\root\project.s3cld'
+
+    targets:
+      - 'C:\online\root\client'
+      - 'C:\online\eo\client'
+    ```
 
 ## Запуск
 
