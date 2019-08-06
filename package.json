@@ -17,6 +17,7 @@
         "chalk": "^2.4.2",
         "dts-gen": "^0.5.8",
         "esm": "^3.2.25",
+        "globby": "^10.0.1",
         "gulp": "^4.0.2",
         "gulp-concat": "^2.6.1",
         "gulp-insert": "^0.5.0",
@@ -24,7 +25,7 @@
         "gulp-less": "^4.0.1",
         "gulp-typescript": "^5.0.1",
         "js-yaml": "^3.13.1",
-        "saby-typescript": "github:saby/TypeScript#rc-19.500",
+        "saby-typescript": "github:saby/TypeScript#rc-19.600",
         "tslint": "^5.18.0",
         "typescript": "^3.5.2"
     }

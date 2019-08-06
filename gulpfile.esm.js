@@ -1,5 +1,7 @@
 import { series, parallel } from 'gulp';
 import {
+    clean,
+
     build,
     buildWatch,
 
@@ -24,6 +26,8 @@ const defaultTask = series(
 
 export {
     defaultTask as default,
+
+    clean,
 
     build,
     buildWatch,
