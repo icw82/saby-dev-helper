@@ -19,6 +19,7 @@ const watch = parallel(
 );
 
 const defaultTask = series(
+    clean,
     build,
     watch,
 );
