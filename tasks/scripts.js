@@ -6,24 +6,34 @@ import { settings, base_dir, is } from './../lib/';
 
 
 const tsProject = ts.createProject({
-    target: 'es5',
-    module: 'amd',
+    alwaysStrict: true,
+    baseUrl: settings.resources,
+    // importHelpers: true,
+    isolatedModules: true,
     lib: [
         'es2015',
         'es2016',
         'es2017',
         'dom',
     ],
+    module: 'amd',
+    moduleResolution: 'Classic', // 'node'
+    // noUnusedLocals: true,
+    paths: {
+        'Core/*': ['WS.Core/core/*'],
+        'Lib/*': ['WS.Core/lib/*'],
+        'Transport/*': ['WS.Core/transport/*']
+    },
+    target: 'es5',
+    // typeRoots: ['node_modules/@types']
 
     // declaration: true,
-    noImplicitReturns: true,
-    noUnusedLocals: true,
-    noUnusedParameters: true,
-    strict: true,
+    // noImplicitReturns: true,
+    // noUnusedParameters: true,
+    // strict: true,
 
-    forceConsistentCasingInFileNames: true,
+    // forceConsistentCasingInFileNames: true,
 
-    moduleResolution: 'Classic', // 'node'
 });
 
 const globToSync = [...settings.targets]
