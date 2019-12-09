@@ -8,6 +8,11 @@ export {
 } from './clean.js';
 
 export {
+    sync,
+    syncWatch,
+} from './sync.js';
+
+export {
     scripts,
     scriptsWatch,
 } from './scripts.js';

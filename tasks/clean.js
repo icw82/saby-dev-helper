@@ -9,7 +9,7 @@ const glob = [...settings.modules]
     .reduce((result, item) => {
         const rel = relative(base_dir, item).replace(/\\/g, '/');
 
-        result.push(`${ rel }/**/*.(ts|js|less|css)`);
+        result.push(`${ rel }/**/*.(ts|js|less|css|xhtml|tmpl|wml)`);
         return result;
     }, []);
 
