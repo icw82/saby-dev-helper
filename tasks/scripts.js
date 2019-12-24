@@ -24,12 +24,12 @@ const tsProject = ts.createProject({
         'Lib/*': ['WS.Core/lib/*'],
         'Transport/*': ['WS.Core/transport/*']
     },
-    target: 'es5',
+    target: 'es2019', //'es5',
     // typeRoots: ['node_modules/@types']
 
     // declaration: true,
     // noImplicitReturns: true,
-    // noUnusedParameters: true,
+    // noUnusedParameters: false,
     // strict: true,
 
     // forceConsistentCasingInFileNames: true,
@@ -55,6 +55,13 @@ const globToCompile = [...settings.modules]
         result.push(`!${ rel }/**/node_modules/**/*.ts`);
         return result;
     }, []);
+
+globToCompile.unshift(
+    relative(
+        base_dir,
+        `${ settings.resources }/WS.Core/ws.d.ts`
+    ).replace(/\\/g, '/')
+);
 
 const sync = () => src(globToSync)
     .pipe(symlink(settings.resources));
