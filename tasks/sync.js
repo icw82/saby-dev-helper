@@ -1,6 +1,7 @@
 import { readlink, unlink } from 'fs';
 import { resolve, relative, join } from 'path';
 import { parallel, src, symlink, watch } from 'gulp';
+import { default as debug } from 'gulp-debug';
 import { settings, base_dir, is } from './../lib/';
 
 
@@ -11,12 +12,14 @@ const globToSync = [...settings.targets]
         result.push(`${ rel }/**/*.xhtml`);
         result.push(`${ rel }/**/*.tmpl`);
         result.push(`${ rel }/**/*.wml`);
+        result.push(`${ rel }/**/*.css`);
         result.push(`!${ rel }/**/node_modules/**/*`);
+
         return result;
     }, []);
 
-
 const sync = () => src(globToSync)
+    // .pipe(debug())
     .pipe(symlink(settings.resources));
 
 

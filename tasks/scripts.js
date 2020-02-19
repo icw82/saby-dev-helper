@@ -24,7 +24,8 @@ const tsProject = ts.createProject({
         'Lib/*': ['WS.Core/lib/*'],
         'Transport/*': ['WS.Core/transport/*']
     },
-    target: 'es2019', //'es5',
+    target: 'es2019',
+    // target: 'es5',
     // typeRoots: ['node_modules/@types']
 
     // declaration: true,

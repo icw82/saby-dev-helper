@@ -13,21 +13,22 @@
         "url": "git@github.com:icw82/saby-dev-helper.git"
     },
     "dependencies": {
-        "@types/node": "^13.1.0",
+        "@types/node": "^13.7.2",
         "@types/requirejs": "^2.1.31",
         "chalk": "^3.0.0",
         "dts-gen": "^0.5.8",
         "esm": "^3.2.25",
-        "globby": "^10.0.1",
+        "globby": "^10.0.2",
         "gulp": "^4.0.2",
         "gulp-concat": "^2.6.1",
+        "gulp-debug": "^4.0.0",
         "gulp-insert": "^0.5.0",
         "gulp-jsdoc3": "^2.0.0",
         "gulp-less": "^4.0.1",
         "gulp-typescript": "^6.0.0-alpha.1",
         "saby-typescript": "git+https://github.com/saby/TypeScript.git",
         "tslint": "^5.20.0",
-        "typescript": "^3.7.4",
+        "typescript": "^3.7.5",
         "yargs": "^15.0.2"
     }
 }
