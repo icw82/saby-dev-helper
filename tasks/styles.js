@@ -15,7 +15,7 @@ const glob = [...settings.targets]
     }, []);
 
 const styles = () => src(glob)
-    .pipe(insert.append('@import \'Controls-theme/themes/default/helpers/_mixins\';'))
+    .pipe(insert.append('@import \'Controls-default-theme/_mixins\';'))
     .pipe(insert.append('@import \'SBIS3.CONTROLS/themes/online/_variables.less\';'))
     .pipe(less({
         paths: [

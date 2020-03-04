@@ -18,6 +18,14 @@ const globToSync = [...settings.targets]
         return result;
     }, []);
 
+// const sdkGlob = [
+//     `${ relative(base_dir, settings.sdk_modules) }/*`,
+// ];
+
+// src(sdkGlob)
+//     .pipe(debug({title: 'Модуль SDK'}))
+//     .pipe(symlink(settings.resources));
+
 const sync = () => src(globToSync)
     // .pipe(debug())
     .pipe(symlink(settings.resources));

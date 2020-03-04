@@ -20,6 +20,16 @@
 
 Например:
 
-```bash
+```sh
 gulp --s3cld C:\online\root\project.s3cld --target C:\online\root\client --target C:\online\eo\client
 ```
+
+## История версий
+
+<!--
+    TODO: Сделать сборку статики независимой от Genie.
+-->
+
+### 4 марта 2020
+
+- С новой версией Genie в очередной раз изменён формат мета-информации стенда.
