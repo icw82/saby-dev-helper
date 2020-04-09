@@ -26,7 +26,6 @@ const tsProject = ts.createProject({
     },
     target: 'es2019',
     // target: 'es5',
-    // typeRoots: ['node_modules/@types']
 
     // declaration: true,
     // noImplicitReturns: true,
