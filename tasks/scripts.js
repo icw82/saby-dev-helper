@@ -30,8 +30,6 @@ const tsProject = ts.createProject({
     // declaration: true,
     // noImplicitReturns: true,
     // noUnusedParameters: false,
-    // strict: true,
-
     // forceConsistentCasingInFileNames: true,
 
 });
