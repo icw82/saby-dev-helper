@@ -1,7 +1,6 @@
 ._*
-/build/
 /node_modules/
 package-lock.json
-local-settings.yaml
+pnpm-lock.yaml
 
 .vscode
