@@ -24,7 +24,7 @@ const tsProject = ts.createProject({
         'Lib/*': ['WS.Core/lib/*'],
         'Transport/*': ['WS.Core/transport/*']
     },
-    target: 'es2019',
+    target: 'es2020',
     // target: 'es5',
 
     // declaration: true,
