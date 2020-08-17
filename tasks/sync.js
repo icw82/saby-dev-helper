@@ -12,7 +12,12 @@ const globToSync = [...settings.targets]
         result.push(`${ rel }/**/*.xhtml`);
         result.push(`${ rel }/**/*.tmpl`);
         result.push(`${ rel }/**/*.wml`);
+
         result.push(`${ rel }/**/*.css`);
+        result.push(`${ rel }/**/*.less`);
+
+        // result.push(`${ rel }/**/*.js`);
+
         result.push(`!${ rel }/**/node_modules/**/*`);
 
         return result;
@@ -44,7 +49,7 @@ const syncWatch = cb => {
         [...settings.targets].forEach(item => {
             const dest = join(
                 settings.resources,
-                relative(item, path)
+                relative(item, path),
             );
 
             if (is.link(dest)) {

@@ -11,6 +11,7 @@ const glob = [...settings.targets]
 
         result.push(`${ rel }/**/*.less`);
         result.push(`!${ rel }/**/node_modules/*`);
+
         return result;
     }, []);
 
@@ -36,6 +37,7 @@ const stylesWatch = cb => {
     watcher.on('unlink', path => console.log(`File ${ resolve(path) } has been removed`));
 
     watcher.on('change', parallel(styles));
+
     cb();
 };
 

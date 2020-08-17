@@ -10,6 +10,7 @@ const glob = [...settings.modules]
         const rel = relative(base_dir, item).replace(/\\/g, '/');
 
         result.push(`${ rel }/**/*.(ts|js|less|css|xhtml|tmpl|wml)`);
+
         return result;
     }, []);
 

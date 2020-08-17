@@ -22,7 +22,7 @@ const tsProject = ts.createProject({
     paths: {
         'Core/*': ['WS.Core/core/*'],
         'Lib/*': ['WS.Core/lib/*'],
-        'Transport/*': ['WS.Core/transport/*']
+        'Transport/*': ['WS.Core/transport/*'],
     },
     target: 'es2020',
     // target: 'es5',
@@ -34,31 +34,28 @@ const tsProject = ts.createProject({
 
 });
 
+// FIXME: Название
+const convert = (result, item) => {
+    const rel = relative(base_dir, item).replace(/\\/g, '/');
+
+    result.push(`${ rel }/**/*.ts`);
+    result.push(`!${ rel }/**/node_modules/**/*.ts`);
+
+    return result;
+};
+
 const globToSync = [...settings.targets]
-    .reduce((result, item) => {
-        const rel = relative(base_dir, item).replace(/\\/g, '/');
-
-        result.push(`${ rel }/**/*.ts`);
-        result.push(`!${ rel }/**/node_modules/**/*.ts`);
-        return result;
-    }, []);
-
+    .reduce(convert, []);
 
 const globToCompile = [...settings.modules]
     .map(module => `${ settings.resources }/${ module }`)
-    .reduce((result, item) => {
-        const rel = relative(base_dir, item).replace(/\\/g, '/');
-
-        result.push(`${ rel }/**/*.ts`);
-        result.push(`!${ rel }/**/node_modules/**/*.ts`);
-        return result;
-    }, []);
+    .reduce(convert, []);
 
 globToCompile.unshift(
     relative(
         base_dir,
-        `${ settings.resources }/WS.Core/ws.d.ts`
-    ).replace(/\\/g, '/')
+        `${ settings.sdk_modules }/WS.Core/ws.d.ts`,
+    ).replace(/\\/g, '/'),
 );
 
 const sync = () => src(globToSync)
@@ -69,7 +66,7 @@ const compile = () => src(globToCompile)
     .pipe(dest(file => {
         return join(
             settings.resources,
-            relative(settings.resources, file.base)
+            relative(settings.resources, file.base),
         );
     }));
 
@@ -92,7 +89,7 @@ const scriptsWatch = cb => {
         [...settings.targets].forEach(item => {
             const dest = join(
                 settings.resources,
-                relative(item, path)
+                relative(item, path),
             );
 
             if (is.link(dest)) {
