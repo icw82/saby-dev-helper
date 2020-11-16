@@ -1,10 +1,15 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
+		"moduleResolution": "node",
+        "baseUrl": "./sources",
         "module": "ESNext",
+        "outDir": "build",
+        "rootDir": "./sources",
         "target": "ESNext",
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true
     },
     "include": [
         "./**/*.ts"
-    ]
+    ],
 }
