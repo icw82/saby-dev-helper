@@ -1,13 +1,13 @@
 import { relative, join } from 'path';
 
 import { parallel, src, dest, watch as gulpWatch } from 'gulp';
-import ts from 'gulp-typescript';
+import { createProject } from 'gulp-typescript';
 
-import { settings } from '../lib';
+import { settings } from '../lib/settings';
 
 // TODO: Индикатор прогресса
 
-const tsProject = ts.createProject({
+const tsProject = createProject({
     alwaysStrict: true,
     baseUrl: settings.destModulesPath,
     // importHelpers: true,

@@ -5,7 +5,7 @@ import { env } from 'process';
 import chalk from 'chalk';
 import { argv } from 'yargs';
 
-import { is } from './is.js';
+import { is } from './is';
 
 
 interface IParams {
@@ -110,7 +110,7 @@ const getParams = (): IParams => {
 
     // TODO: проверка допустимых параметров?
     if (!s3cld || !target) {
-        throw Error();
+        throw new Error();
     }
 
     if (

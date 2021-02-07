@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
-		"moduleResolution": "node",
-        "baseUrl": "./sources",
-        "module": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "module": "commonjs",
+        "moduleResolution": "node",
         "outDir": "build",
-        "rootDir": "./sources",
-        "target": "ESNext",
+        "rootDir": ".",
         "skipLibCheck": true,
-        "allowSyntheticDefaultImports": true
+        "target": "ESNext"
     },
     "include": [
-        "./**/*.ts"
+        "./lib/**/*.ts",
+        "./tasks/**/*.ts"
     ],
 }

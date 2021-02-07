@@ -1,10 +1,11 @@
 import { relative } from 'path';
 
 import { parallel, src, dest, watch as gulpWatch } from 'gulp';
-import insert from 'gulp-insert';
-import gulpLess from 'gulp-less';
 
-import { settings } from '../lib';
+import insert = require('gulp-insert');
+import gulpLess = require('gulp-less');
+
+import { settings } from '../lib/settings';
 
 
 const glob = [...settings.targets]
@@ -20,7 +21,7 @@ const glob = [...settings.targets]
 const compileLess = () => src(glob)
     .pipe(insert.prepend('@import \'SBIS3.CONTROLS/themes/online/_variables\';'))
     .pipe(insert.prepend('@import \'Controls-default-theme/_mixins\';'))
-    .pipe(insert.prepend('@import \'Controls-default-theme/_variables\';'))
+    .pipe(insert.prepend('@import \'Controls-default-theme/_aliases\';'))
     .pipe(gulpLess({
         paths: [
             settings.destModulesPath,
